@@ -18,7 +18,7 @@ GQA-Mamba3 foundational model for Bangla & slight amount of English. Currently i
 
 ### Stack
 
-Python · PyTorch · C++ · OpenGL · FastAPI
+Python · PyTorch · C++ · OpenGL · FastAPI · Java · Spring Boot · Docker · Kotlin
 
 ---
 
