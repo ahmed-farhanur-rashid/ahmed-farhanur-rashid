@@ -14,3 +14,7 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+<meta name="google-site-verification" content="D7-BY_V3njglLunJX5zgaigV1jbapmHTGrof6S-fOfc" />
+
+# Ahmed Farhanur Rashid
