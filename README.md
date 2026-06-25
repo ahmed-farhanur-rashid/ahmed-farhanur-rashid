@@ -1,21 +1,25 @@
 <meta name="google-site-verification" content="D7-BY_V3njglLunJX5zgaigV1jbapmHTGrof6S-fOfc" />
 
-## Hi there 👋
 # Ahmed Farhanur Rashid
 
+CS student. I build things I find interesting, mostly in ML and systems.
 
-<!--
-**ahmed-farhanur-rashid/ahmed-farhanur-rashid** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+---
 
-Here are some ideas to get you started:
+### What I'm working on
 
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+**[CRUMB](https://github.com/ahmed-farhanur-rashid/crumb-ai)** *(thesis, private for now)*  
+Compact Reasoning Unit for Mamba-Attention Builds — a language model architecture with custom attention bias, FFN, positional encoding, and KV caching. This is the main thing.
 
+**[Bangla-Gamba](https://github.com/ahmed-farhanur-rashid/bangla-gamba)**  
+GQA-Mamba3 foundational model for Bangla, Banglish, and English. Currently in preprocessing and tokenizer training.
+
+---
+
+### Stack
+
+Python · PyTorch · C++ · OpenGL · FastAPI
+
+---
+
+*Most repos are WIP.*
