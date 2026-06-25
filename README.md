@@ -12,7 +12,7 @@ CS student. I build things I find interesting, mostly in ML and systems.
 Compact Reasoning Unit for Mamba-Attention Builds — a language model architecture with custom attention bias, FFN, positional encoding, and KV caching. This is the main thing.
 
 **[Bangla-Gamba](https://github.com/ahmed-farhanur-rashid/bangla-gamba)**  
-GQA-Mamba3 foundational model for Bangla, Banglish, and English. Currently in preprocessing and tokenizer training.
+GQA-Mamba3 foundational model for Bangla & slight amount of English. Currently in preprocessing and tokenizer training.
 
 ---
 
