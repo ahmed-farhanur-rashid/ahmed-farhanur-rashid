@@ -21,7 +21,7 @@ Bengla unicode normalizer re-written and improved in Rust for the purpose of spe
 
 ### Stack
 
-Python · PyTorch · C++ · OpenGL · FastAPI · Java · Spring Boot · Docker · Kotlin
+Python · PyTorch · C++ · OpenGL · FastAPI · Java · Spring Boot · Docker · Kotlin · Rust
 
 ---
 
