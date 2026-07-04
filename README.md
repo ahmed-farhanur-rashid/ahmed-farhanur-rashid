@@ -15,7 +15,7 @@ Compact Reasoning Unit for Mamba-Attention Builds — a language model architect
 GQA-Mamba3 foundational model for Bangla & slight amount of English. Currently in data preprocessing, will soon move to training.
 
 **[BN-Normalizer-Rs](https://github.com/ahmed-farhanur-rashid/bn-normalizer-rs)**  
-Bengla unicode normalizer re-written and improved in Rust for the purpose of speedy execution. Currnetly at ~26x times the execution speed of the original library.
+Bengla unicode normalizer re-written and improved in Rust for the purpose of speedy execution. Currently at ~26x times the execution speed of the original library.
 
 ---
 
