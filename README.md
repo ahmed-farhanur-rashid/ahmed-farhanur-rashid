@@ -17,6 +17,9 @@ GQA-Mamba3 Foundational Model Currently Being Trained on Bangla, English & Dual 
 **[BN-Normalizer-Rs](https://github.com/ahmed-farhanur-rashid/bn-normalizer-rs)**  
 Bengla unicode normalizer re-written and improved in Rust for the purpose of speedy execution. Currently at ~26x times the execution speed of the original library.
 
+**[TuneDesk](https://github.com/ahmed-farhanur-rashid/tunedesk)**
+GUI fine tuning platform for Vision Models. 
+
 ---
 
 ### Stack
