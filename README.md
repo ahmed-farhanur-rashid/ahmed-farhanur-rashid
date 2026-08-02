@@ -8,8 +8,8 @@ CS student. I build things I find interesting, mostly in ML and systems.
 
 ### What I'm working on
 
-**[CRUMB](https://github.com/ahmed-farhanur-rashid/crumb-ai)** *(thesis, private for now)*  
-Compact Reasoning Unit for Mamba-Attention Builds — a language model architecture with custom attention bias, FFN, positional encoding, and KV caching. This is the main thing. Will likely drop this in favour of pure attn architecture. As ssm hybrid take longer and more memory to train, the throughput benifits are negative in small language models and only really show up at 1B param and up.
+**[Tessotron-Code](https://github.com/ahmed-farhanur-rashid/tessotron-code)** *(thesis, private for now)*  
+340M python only trained model, my thesis. Original thesis was **[CRUMB]**(https://github.com/ahmed-farhanur-rashid/crumb-ai) but mamba's benefits don't show up consistently as per my experimentation at this small scale.
 
 **[FinchTune](https://github.com/ahmed-farhanur-rashid/finchtune)**  
 GUI fine tuning platform for Vision Models. 
