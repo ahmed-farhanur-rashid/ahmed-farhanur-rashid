@@ -9,7 +9,7 @@ CS student. I build things I find interesting, mostly in ML and systems.
 ### What I'm working on
 
 **[Tessotron-Code](https://github.com/ahmed-farhanur-rashid/tessotron-code)** *(thesis, private for now)*  
-340M python only trained model, my thesis. Original thesis was **[CRUMB]**(https://github.com/ahmed-farhanur-rashid/crumb-ai) but mamba's benefits don't show up consistently as per my experimentation at this small scale.
+340M python only trained model, my thesis. Original thesis was **[CRUMB](https://github.com/ahmed-farhanur-rashid/crumb-ai)** but mamba's benefits don't show up consistently as per my experimentation at this small scale.
 
 **[FinchTune](https://github.com/ahmed-farhanur-rashid/finchtune)**  
 GUI fine tuning platform for Vision Models. 
