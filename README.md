@@ -41,6 +41,18 @@
 ### Stack
 
 <!--STACK:START-->
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=python" alt="Python" title="Python" height="42"/>
+  <img src="https://skillicons.dev/icons?i=c" alt="C" title="C" height="42"/>
+  <img src="https://skillicons.dev/icons?i=jupyter" alt="Jupyter Notebook" title="Jupyter Notebook" height="42"/>
+  <img src="https://skillicons.dev/icons?i=cplusplus" alt="C++" title="C++" height="42"/>
+  <img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript" title="TypeScript" height="42"/>
+  <img src="https://skillicons.dev/icons?i=java" alt="Java" title="Java" height="42"/>
+  <img src="https://skillicons.dev/icons?i=kotlin" alt="Kotlin" title="Kotlin" height="42"/>
+  <img src="https://skillicons.dev/icons?i=rust" alt="Rust" title="Rust" height="42"/>
+  <img src="https://skillicons.dev/icons?i=bash" alt="Shell" title="Shell" height="42"/>
+  <img src="https://skillicons.dev/icons?i=css3" alt="CSS" title="CSS" height="42"/>
+</p>
 <!--STACK:END-->
 
 <br/>
