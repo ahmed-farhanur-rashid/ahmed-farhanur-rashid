@@ -12,34 +12,38 @@ TOP_N = 10
 
 TOKEN = os.environ.get("GITHUB_TOKEN", "")
 
-JUPYTER_CORRECTION = 0.15
-
 SKILL_ICON_SLUGS = {
-    "Python": "python",
-    "Jupyter Notebook": "jupyter",
-    "C++": "cplusplus",
+    "Python": "py",
+    "C++": "cpp",
     "C": "c",
     "Java": "java",
     "Kotlin": "kotlin",
     "Rust": "rust",
-    "JavaScript": "javascript",
-    "TypeScript": "typescript",
-    "HTML": "html5",
-    "CSS": "css3",
+    "JavaScript": "js",
+    "TypeScript": "ts",
+    "HTML": "html",
+    "CSS": "css",
     "Shell": "bash",
     "Dockerfile": "docker",
     "Go": "go",
-    "C#": "csharp",
+    "C#": "cs",
     "Swift": "swift",
     "PHP": "php",
     "Ruby": "ruby",
-    "Vue": "vuejs",
-    "OpenGL": "opengl",
-    "GLSL": "opengl",
+    "Vue": "vue",
     "CMake": "cmake",
-    "Makefile": "gnu",
-    "SQL": "mysql",
+    "R": "r",
+    "Lua": "lua",
+    "Scala": "scala",
+    "Dart": "dart",
+    "Haskell": "haskell",
 }
+# skillicons.dev has no dedicated Jupyter Notebook icon, so it never
+# renders as an icon regardless of ranking. It is excluded from the
+# byte-based ranking entirely rather than guessing a correction factor
+# with no ground truth to calibrate against - notebook JSON bloat
+# (embedded outputs, images) varies too much per-repo to fake a number.
+EXCLUDED_FROM_RANKING = {"Jupyter Notebook"}
 
 
 def api_get(url):
@@ -73,32 +77,32 @@ def aggregate_languages(repos):
         except Exception:
             continue
         for lang, byte_count in langs.items():
-            if lang == "Jupyter Notebook":
-                byte_count = int(byte_count * JUPYTER_CORRECTION)
+            if lang in EXCLUDED_FROM_RANKING:
+                continue
             totals[lang] = totals.get(lang, 0) + byte_count
     return totals
 
 
 def build_block(totals):
     ranked = sorted(totals.items(), key=lambda kv: kv[1], reverse=True)
-    ranked = [(lang, count) for lang, count in ranked if count > 0][:TOP_N]
+    ranked = [(lang, count) for lang, count in ranked if count > 0]
 
-    icons = []
+    slugs = []
     for lang, _ in ranked:
         slug = SKILL_ICON_SLUGS.get(lang)
-        if not slug:
-            continue
-        icons.append(
-            f'<img src="https://skillicons.dev/icons?i={slug}" alt="{lang}" title="{lang}" height="42"/>'
-        )
+        if slug and slug not in slugs:
+            slugs.append(slug)
+        if len(slugs) >= TOP_N:
+            break
 
-    if not icons:
+    if not slugs:
         return "<sub>Stack detection unavailable.</sub>"
 
+    icon_list = ",".join(slugs)
     return (
-        '<p align="left">\n  '
-        + "\n  ".join(icons)
-        + "\n</p>"
+        '<p align="left">\n'
+        f'  <img src="https://skillicons.dev/icons?i={icon_list}" alt="stack" />\n'
+        "</p>"
     )
 
 
