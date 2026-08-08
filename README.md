@@ -23,6 +23,9 @@
 ### Stack
 
 <!--STACK:START-->
+<p align="left">
+  <img src="https://skillicons.dev/icons?i=py,c,cpp,ts,java,kotlin,rust,bash,css,html" alt="stack" />
+</p>
 <!--STACK:END-->
 
 <br/>
