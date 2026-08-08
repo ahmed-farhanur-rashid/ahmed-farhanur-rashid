@@ -42,6 +42,15 @@ For the love of god, I just can't with this bullshit codebase. Effnet is the wor
 
 <br/>
 
+### Stats
+
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=ahmed-farhanur-rashid&show_icons=true&hide_border=true&bg_color=0a0c0f&title_color=4fffb0&icon_color=00c8ff&text_color=e8edf5&ring_color=4fffb0" alt="GitHub stats" height="165" />
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=ahmed-farhanur-rashid&layout=compact&hide_border=true&bg_color=0a0c0f&title_color=4fffb0&text_color=e8edf5" alt="Top languages" height="165" />
+</div>
+
+<br/>
+
 ### Stack
 
 `Python` `PyTorch` `C++` `OpenGL` `FastAPI` `Java` `Spring Boot` `Docker` `Kotlin` `Rust`

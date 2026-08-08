@@ -12,11 +12,50 @@
       .dot { fill: #ff4d6d; }
       .dot2 { fill: #ffb830; }
       .dot3 { fill: #4fffb0; }
+      .hex { fill: none; stroke: #4fffb0; stroke-width: 1px; }
+
+      #sweep { animation: sweep 5s ease-in-out infinite; }
+      @keyframes sweep {
+        0%   { transform: translateX(-260px); }
+        100% { transform: translateX(900px); }
+      }
+
+      .hexfade { animation: hexfade 5s ease-in-out infinite; }
+      @keyframes hexfade {
+        0%, 100% { opacity: 0.08; }
+        50% { opacity: 0.5; }
+      }
     </style>
+    <linearGradient id="glowgrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#4fffb0" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#4fffb0" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#4fffb0" stop-opacity="0"/>
+    </linearGradient>
+    <clipPath id="cardclip">
+      <rect width="900" height="220" rx="14"/>
+    </clipPath>
   </defs>
 
   <rect class="bg" width="900" height="220" rx="14"/>
   <rect width="899" height="219" x="0.5" y="0.5" rx="14" fill="none" stroke="#222730"/>
+
+  <g clip-path="url(#cardclip)">
+    <g id="hexrow">
+      <polygon class="hex hexfade" style="animation-delay:0s"    points="680,70 690,64 700,70 700,82 690,88 680,82"/>
+      <polygon class="hex hexfade" style="animation-delay:0.4s"  points="720,55 730,49 740,55 740,67 730,73 720,67"/>
+      <polygon class="hex hexfade" style="animation-delay:0.8s"  points="760,80 770,74 780,80 780,92 770,98 760,92"/>
+      <polygon class="hex hexfade" style="animation-delay:1.2s"  points="710,100 720,94 730,100 730,112 720,118 710,112"/>
+      <polygon class="hex hexfade" style="animation-delay:1.6s"  points="800,60 810,54 820,60 820,72 810,78 800,72"/>
+      <polygon class="hex hexfade" style="animation-delay:2.0s"  points="840,90 850,84 860,90 860,102 850,108 840,102"/>
+      <polygon class="hex hexfade" style="animation-delay:2.4s"  points="790,130 800,124 810,130 810,142 800,148 790,142"/>
+      <polygon class="hex hexfade" style="animation-delay:2.8s"  points="740,150 750,144 760,150 760,162 750,168 740,162"/>
+      <polygon class="hex hexfade" style="animation-delay:0.6s"  points="680,160 690,154 700,160 700,172 690,178 680,172"/>
+      <polygon class="hex hexfade" style="animation-delay:1.4s"  points="850,145 860,139 870,145 870,157 860,163 850,157"/>
+      <polygon class="hex hexfade" style="animation-delay:3.2s"  points="650,110 660,104 670,110 670,122 660,128 650,122"/>
+      <polygon class="hex hexfade" style="animation-delay:1.8s"  points="820,175 830,169 840,175 840,187 830,193 820,187"/>
+    </g>
+    <rect id="sweep" y="0" width="260" height="220" fill="url(#glowgrad)"/>
+  </g>
 
   <rect x="0" y="0" width="900" height="36" rx="14" fill="#111318"/>
   <rect x="0" y="22" width="900" height="14" fill="#111318"/>
