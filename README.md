@@ -1,28 +1,35 @@
-<meta name="google-site-verification" content="D7-BY_V3njglLunJX5zgaigV1jbapmHTGrof6S-fOfc" />
+<div align="center">
+  <img src="assets/header.svg" alt="Ahmed Farhanur Rashid" width="100%" />
+</div>
 
-# Ahmed Farhanur Rashid
-
-CS student. I build things I find interesting, mostly in ML and systems.
-
----
+<br/>
 
 ### What I'm working on
 
-**[Tessotron-Code](https://github.com/ahmed-farhanur-rashid/tessotron-code)** *(thesis, private for now)*  
+**[Tessotron-Code](https://github.com/ahmed-farhanur-rashid/tessotron-code)** *(thesis, private for now)*
 340M python only trained model, my thesis. Original thesis was **[CRUMB](https://github.com/ahmed-farhanur-rashid/crumb-ai)** but mamba's benefits don't show up consistently as per my experimentation at this small scale.
 
-**[FinchTune](https://github.com/ahmed-farhanur-rashid/finchtune)**  
-GUI fine tuning platform for Vision Models. 
+**[FinchTune](https://github.com/ahmed-farhanur-rashid/finchtune)**
+GUI fine tuning platform for Vision Models.
 
-**[GradeEye](https://github.com/ahmed-farhanur-rashid/gradeeye)**  
+**[GradeEye](https://github.com/ahmed-farhanur-rashid/gradeeye)**
 For the love of god, I just can't with this bullshit codebase. Effnet is the worst.
 
----
+<br/>
+
+### Recently active
+
+<!--RECENT-REPOS:START-->
+<!--RECENT-REPOS:END-->
+
+<br/>
 
 ### Stack
 
-Python · PyTorch · C++ · OpenGL · FastAPI · Java · Spring Boot · Docker · Kotlin · Rust
+`Python` `PyTorch` `C++` `OpenGL` `FastAPI` `Java` `Spring Boot` `Docker` `Kotlin` `Rust`
 
----
+<br/>
 
-*Most repos are WIP.*
+<div align="center">
+  <sub>Most repos are WIP.</sub>
+</div>
