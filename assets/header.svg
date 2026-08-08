@@ -7,7 +7,7 @@
       .path { fill: #00c8ff; }
       .name-hollow { font-family: 'JetBrains Mono', monospace; font-weight: 800; font-size: 34px; fill: none; stroke: #4fffb0; stroke-width: 1px; }
       .role { font-family: 'JetBrains Mono', monospace; font-size: 15px; fill: #7a8499; }
-      .comment { font-family: 'JetBrains Mono', monospace; font-size: 13px; fill: #3d4455; }
+      .comment { font-family: 'JetBrains Mono', monospace; font-size: 13px; fill: #6b7280; }
       .cursor { fill: #4fffb0; }
       .dot { fill: #ff4d6d; }
       .dot2 { fill: #ffb830; }

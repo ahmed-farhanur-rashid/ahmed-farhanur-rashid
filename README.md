@@ -40,10 +40,11 @@
 
 ### Stack
 
-`Python` `PyTorch` `C++` `OpenGL` `FastAPI` `Java` `Spring Boot` `Docker` `Kotlin` `Rust`
+<!--STACK:START-->
+<!--STACK:END-->
 
 <br/>
 
 <div align="center">
-  <sub>Most repos are WIP.</sub>
+  <sub>WIP is a permanent state, not a phase</sub>
 </div>
