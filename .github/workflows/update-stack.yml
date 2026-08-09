@@ -2,7 +2,7 @@ name: Update stack icons
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "40 5 * * *"
   workflow_dispatch:
   push:
     branches:

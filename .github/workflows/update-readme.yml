@@ -2,7 +2,7 @@ name: Update README recent repos
 
 on:
   schedule:
-    - cron: "0 6 * * *"
+    - cron: "20 5 * * *"
   workflow_dispatch:
   push:
     branches:

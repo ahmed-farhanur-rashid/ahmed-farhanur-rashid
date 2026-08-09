@@ -22,7 +22,7 @@ jobs:
         uses: stats-organization/github-readme-stats-action@v2
         with:
           card: stats
-          options: username=ahmed-farhanur-rashid&show_icons=true&hide_border=true&bg_color=0a0c0f&title_color=4fffb0&icon_color=00c8ff&text_color=e8edf5&ring_color=4fffb0
+          options: username=ahmed-farhanur-rashid&show_icons=true&count_private=true&hide_border=true&bg_color=0a0c0f&title_color=4fffb0&icon_color=00c8ff&text_color=e8edf5&ring_color=4fffb0
           path: assets/stats.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
