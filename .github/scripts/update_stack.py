@@ -1,8 +1,10 @@
 import os
 import re
 import sys
-import urllib.request
 import json
+import base64
+import urllib.request
+import urllib.parse
 
 USERNAME = "ahmed-farhanur-rashid"
 README_PATH = "README.md"
@@ -38,12 +40,13 @@ SKILL_ICON_SLUGS = {
     "Dart": "dart",
     "Haskell": "haskell",
 }
-# skillicons.dev has no dedicated Jupyter Notebook icon, so it never
-# renders as an icon regardless of ranking. It is excluded from the
-# byte-based ranking entirely rather than guessing a correction factor
-# with no ground truth to calibrate against - notebook JSON bloat
-# (embedded outputs, images) varies too much per-repo to fake a number.
-EXCLUDED_FROM_RANKING = {"Jupyter Notebook"}
+
+# Jupyter Notebook byte counts from GitHub's languages API include the
+# entire .ipynb JSON file - cell outputs, embedded images, metadata -
+# not just the code. recover_python_from_notebooks() parses each
+# notebook directly and counts only source bytes from code cells,
+# crediting that to Python instead. Jupyter Notebook is then dropped
+# from totals since its bytes have been properly reattributed.
 
 
 def api_get(url):
@@ -77,9 +80,70 @@ def aggregate_languages(repos):
         except Exception:
             continue
         for lang, byte_count in langs.items():
-            if lang in EXCLUDED_FROM_RANKING:
-                continue
             totals[lang] = totals.get(lang, 0) + byte_count
+    return totals
+
+
+def get_repo_tree(owner, repo, default_branch):
+    url = f"https://api.github.com/repos/{owner}/{repo}/git/trees/{default_branch}?recursive=1"
+    try:
+        return api_get(url)
+    except Exception:
+        return None
+
+
+def get_file_content(owner, repo, path):
+    url = f"https://api.github.com/repos/{owner}/{repo}/contents/{urllib.parse.quote(path)}"
+    try:
+        data = api_get(url)
+    except Exception:
+        return None
+    if data.get("encoding") != "base64":
+        return None
+    try:
+        return base64.b64decode(data["content"]).decode("utf-8", errors="ignore")
+    except Exception:
+        return None
+
+
+def extract_notebook_code_bytes(notebook_text):
+    try:
+        nb = json.loads(notebook_text)
+    except Exception:
+        return 0
+    total = 0
+    for cell in nb.get("cells", []):
+        if cell.get("cell_type") != "code":
+            continue
+        source = cell.get("source", "")
+        if isinstance(source, list):
+            source = "".join(source)
+        total += len(source.encode("utf-8"))
+    return total
+
+
+def recover_python_from_notebooks(repos, totals):
+    recovered_total = 0
+    for r in repos:
+        owner = r["owner"]["login"]
+        repo = r["name"]
+        branch = r.get("default_branch", "main")
+        tree = get_repo_tree(owner, repo, branch)
+        if not tree or "tree" not in tree:
+            continue
+        notebook_paths = [
+            item["path"] for item in tree["tree"]
+            if item.get("type") == "blob" and item["path"].endswith(".ipynb")
+        ]
+        for path in notebook_paths:
+            content = get_file_content(owner, repo, path)
+            if content is None:
+                continue
+            recovered_total += extract_notebook_code_bytes(content)
+
+    if recovered_total > 0:
+        totals["Python"] = totals.get("Python", 0) + recovered_total
+    totals.pop("Jupyter Notebook", None)
     return totals
 
 
@@ -135,5 +199,6 @@ def update_readme(block):
 if __name__ == "__main__":
     repos = get_all_repos()
     totals = aggregate_languages(repos)
+    totals = recover_python_from_notebooks(repos, totals)
     block = build_block(totals)
     update_readme(block)
