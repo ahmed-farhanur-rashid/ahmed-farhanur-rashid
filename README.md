@@ -13,11 +13,11 @@
     <td align="right"><sub>—</sub></td>
   </tr>
   <tr>
-    <td><a href="https://github.com/ahmed-farhanur-rashid/crumb-ai"><b>crumb-ai</b></a><br/><sub>Compact Reasoning Unit for Mamba-attention Builds (CRUMB)</sub></td>
+    <td><a href="https://github.com/ahmed-farhanur-rashid/gradeeye"><b>gradeeye</b></a><br/><sub>Ordinal deep learning for diabetic retinopathy severity grading: ConvNeXt-Tiny + CBAM attention + CORN ordinal regression, trained using LODO strategy on Eyepacs, Aptos, Messidor-2</sub></td>
     <td align="right"><sub>Python</sub></td>
   </tr>
   <tr>
-    <td><a href="https://github.com/ahmed-farhanur-rashid/gradeeye"><b>gradeeye</b></a><br/><sub>Ordinal deep learning for diabetic retinopathy severity grading: ConvNeXt-Tiny + CBAM attention + CORN ordinal regression, trained using LODO strategy on Eyepacs, Aptos, Messidor-2</sub></td>
+    <td><a href="https://github.com/ahmed-farhanur-rashid/crumb-ai"><b>crumb-ai</b></a><br/><sub>Compact Reasoning Unit for Mamba-attention Builds (CRUMB)</sub></td>
     <td align="right"><sub>Python</sub></td>
   </tr>
   <tr>
