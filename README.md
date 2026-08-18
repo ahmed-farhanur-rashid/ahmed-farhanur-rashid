@@ -44,7 +44,7 @@
 
 <!--STACK:START-->
 <p align="left">
-  <img src="https://skillicons.dev/icons?i=py,c,cpp,ts,java,kotlin,bash,rust,css,html" alt="stack" />
+  <img src="https://skillicons.dev/icons?i=py,c,cpp,ts,java,kotlin,bash,rust,js,html" alt="stack" />
 </p>
 <!--STACK:END-->
 
