@@ -9,12 +9,12 @@
 <!--RECENT-REPOS:START-->
 <table>
   <tr>
-    <td><a href="https://github.com/ahmed-farhanur-rashid/qmew"><b>qmew</b></a><br/><sub>(WiP) QMEW (Quick Multi-Endpoint Workspace): Open-source, cross-platform P2P remote desktop with LAN-first connectivity, global peer-to-peer access, and multi-device control.</sub></td>
-    <td align="right"><sub>—</sub></td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/ahmed-farhanur-rashid/slate-whiteboard"><b>slate-whiteboard</b></a><br/><sub>Whiteboard I built for my daily scribbles. Personal tool. Feel free to fork and use it though.</sub></td>
     <td align="right"><sub>JavaScript</sub></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/ahmed-farhanur-rashid/qmew"><b>qmew</b></a><br/><sub>(WiP) QMEW (Quick Multi-Endpoint Workspace): Open-source, cross-platform P2P remote desktop with LAN-first connectivity, global peer-to-peer access, and multi-device control.</sub></td>
+    <td align="right"><sub>—</sub></td>
   </tr>
   <tr>
     <td><a href="https://github.com/ahmed-farhanur-rashid/gradeeye"><b>gradeeye</b></a><br/><sub>Ordinal deep learning for diabetic retinopathy severity grading: ConvNeXt-Tiny + CBAM attention + CORN ordinal regression, trained using LODO strategy on Eyepacs, Aptos, Messidor-2 & DDR.</sub></td>
