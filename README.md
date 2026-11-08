@@ -9,10 +9,6 @@
 <!--RECENT-REPOS:START-->
 <table>
   <tr>
-    <td><a href="https://github.com/ahmed-farhanur-rashid/gradeeye"><b>gradeeye</b></a><br/><sub>Ordinal deep learning for diabetic retinopathy severity grading: ConvNeXt-Tiny + CBAM attention + CORN ordinal regression, trained using LODO strategy on Eyepacs, Aptos, Messidor-2 & DDR.</sub></td>
-    <td align="right"><sub>Python</sub></td>
-  </tr>
-  <tr>
     <td><a href="https://github.com/ahmed-farhanur-rashid/slate-whiteboard"><b>slate-whiteboard</b></a><br/><sub>Whiteboard I built for my daily scribbles. Personal tool. Feel free to fork and use it though.</sub></td>
     <td align="right"><sub>JavaScript</sub></td>
   </tr>
@@ -22,6 +18,10 @@
   </tr>
   <tr>
     <td><a href="https://github.com/ahmed-farhanur-rashid/crumb-ai"><b>crumb-ai</b></a><br/><sub>Compact Reasoning Unit for Mamba-attention Builds (CRUMB)</sub></td>
+    <td align="right"><sub>Python</sub></td>
+  </tr>
+  <tr>
+    <td><a href="https://github.com/ahmed-farhanur-rashid/finchtune"><b>finchtune</b></a><br/><sub>VIsion Model Fine Tuning Platform.</sub></td>
     <td align="right"><sub>Python</sub></td>
   </tr>
 </table>
