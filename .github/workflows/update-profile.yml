@@ -1,0 +1,88 @@
+name: Update profile
+
+on:
+  schedule:
+    - cron: "0 5 * * 1" # Mondays 05:00 UTC
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/**"
+
+permissions:
+  contents: write
+
+# One run at a time, so two runs can never fight over the same push.
+concurrency:
+  group: update-profile
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # Third-party action: if it has an outage, keep the old cards instead
+      # of failing the whole run.
+      - name: Generate stats card
+        continue-on-error: true
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: stats
+          options: username=ahmed-farhanur-rashid&show_icons=true&count_private=true&hide_border=true&bg_color=0a0c0f&title_color=4fffb0&icon_color=00c8ff&text_color=e8edf5&ring_color=4fffb0
+          path: assets/stats.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Generate top languages card
+        continue-on-error: true
+        uses: stats-organization/github-readme-stats-action@v2
+        with:
+          card: top-langs
+          options: username=ahmed-farhanur-rashid&layout=compact&hide_border=true&bg_color=0a0c0f&title_color=4fffb0&text_color=e8edf5&hide=jupyter%20notebook
+          path: assets/top-langs.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Update recent repos
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/update_recent_repos.py
+
+      - name: Update stack icons
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python .github/scripts/update_stack.py
+
+      # Cache-bust GitHub's image proxy using a hash of the file contents,
+      # so README.md only changes when a card actually changed. (The old
+      # version stamped the current time, which made every run a commit.)
+      - name: Version stat card URLs by content hash
+        run: |
+          for f in stats top-langs; do
+            [ -f "assets/$f.svg" ] || continue
+            H=$(sha1sum "assets/$f.svg" | cut -c1-8)
+            sed -i -E "s#(assets/${f}\.svg)(\?v=[0-9a-f]+)?#\1?v=${H}#" README.md
+          done
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A assets README.md
+          if git diff --staged --quiet; then
+            echo "Nothing changed, no commit."
+            exit 0
+          fi
+          git commit -m "chore: refresh profile"
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push && exit 0
+            sleep 5
+          done
+          exit 1
